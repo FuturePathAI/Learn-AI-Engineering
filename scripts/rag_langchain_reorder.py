@@ -9,8 +9,8 @@ from langchain_community.vectorstores import Chroma
 from langchain_openai import OpenAI
 
 # Set the OpenAI API key
-openai.api_key = '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'
-
+os.environ["OPENAI_API_KEY"] = os.getenv('OPENAI_API_KEY_FUTUREPATH_ML')
+openai.api_key = os.environ["OPENAI_API_KEY"]
 
 class LangChainQueryEngine:
     def __init__(self, data_dir):

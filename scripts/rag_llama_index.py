@@ -1,4 +1,5 @@
 import os
+import openai
 import chromadb
 
 from llama_index.llms import OpenAI
@@ -21,6 +22,10 @@ from llama_index.postprocessor import (
     SimilarityPostprocessor, 
     SentenceEmbeddingOptimizer,
 )
+
+# Set the OpenAI API key
+os.environ["OPENAI_API_KEY"] = os.getenv('OPENAI_API_KEY_FUTUREPATH_ML')
+openai.api_key = os.environ["OPENAI_API_KEY"]
 
 
 class RAGLlamaIndex():

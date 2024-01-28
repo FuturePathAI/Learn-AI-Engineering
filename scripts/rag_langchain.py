@@ -11,8 +11,9 @@ from langchain.chains.question_answering import load_qa_chain
 from langchain.chat_models import ChatOpenAI
 
 # Set the OpenAI API key
-openai.api_key = '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'
-        
+os.environ["OPENAI_API_KEY"] = os.getenv('OPENAI_API_KEY_FUTUREPATH_ML')
+openai.api_key = os.environ["OPENAI_API_KEY"]
+
 class RAGLangchain():
     def __init__(self, input_dir: str, persist_dir: str):
         self.input_dir = input_dir

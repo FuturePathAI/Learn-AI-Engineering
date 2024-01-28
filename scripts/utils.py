@@ -1,20 +1,22 @@
 import warnings
 warnings.filterwarnings('ignore')
 
+import os
+import openai
 import logging
 from openai import OpenAI
 from tenacity import retry, wait_random_exponential, stop_after_attempt
 
-from mercury_ml.chatbot import config
-
-# Initialize config
-cfg = config.init_config()
-
 # Configure logging
 logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.INFO)
 
+# Set the OpenAI API key
+os.environ["OPENAI_API_KEY"] = os.getenv('OPENAI_API_KEY_FUTUREPATH_ML')
+openai.api_key = os.environ["OPENAI_API_KEY"]
+
+
 # Initialize OpenAI client
-client = OpenAI(api_key=cfg.openai_api.API_KEY)
+client = OpenAI(api_key=openai.api_key)
 
 @retry(wait=wait_random_exponential(min=1, max=40), stop=stop_after_attempt(5))
 def chat_completion_request(messages,                            

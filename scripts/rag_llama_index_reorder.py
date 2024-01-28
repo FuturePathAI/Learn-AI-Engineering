@@ -6,7 +6,8 @@ from llama_index.postprocessor import LongContextReorder
 from llama_index.response.notebook_utils import display_response
 
 # Set the OpenAI API key
-openai.api_key = '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'
+os.environ["OPENAI_API_KEY"] = os.getenv('OPENAI_API_KEY_FUTUREPATH_ML')
+openai.api_key = os.environ["OPENAI_API_KEY"]
 
 class LlamaIndexQueryEngine:
     def __init__(self, data_dir, model_name="gpt-3.5-turbo-instruct", temperature=0.1):
