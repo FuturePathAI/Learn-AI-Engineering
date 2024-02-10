@@ -3,7 +3,7 @@ This is a skeleton for a FastAPI application that interacts with an LLM which yo
 You need to host a FastAPI server to interact with the LLM. This server will receive requests from the client and send them to the LLM.
 The server must definitely have the following endpoints:
 - /generate: This endpoint will receive the request from the client, process it and send it to the LLM.
-- /status: This endpoint will be used to check the status of the server.
+- /status: This endpoint will be used to check the status of the server. And must return a 200 status code if the server is running and a {"status": "ok"} message.
 """
 
 from typing import Any, Dict, List
