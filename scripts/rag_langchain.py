@@ -13,7 +13,7 @@ from langchain.chat_models import ChatOpenAI
 # Set the OpenAI API key
 os.environ["OPENAI_API_KEY"] = os.getenv('OPENAI_API_KEY_FUTUREPATH_ML')
 openai.api_key = os.environ["OPENAI_API_KEY"]
-
+        
 class RAGLangchain():
     def __init__(self, input_dir: str, persist_dir: str):
         self.input_dir = input_dir

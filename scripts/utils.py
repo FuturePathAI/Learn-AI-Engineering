@@ -1,11 +1,10 @@
 import warnings
 warnings.filterwarnings('ignore')
 
-import os
-import openai
 import logging
 from openai import OpenAI
 from tenacity import retry, wait_random_exponential, stop_after_attempt
+
 
 # Configure logging
 logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.INFO)
@@ -13,7 +12,6 @@ logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.INFO)
 # Set the OpenAI API key
 os.environ["OPENAI_API_KEY"] = os.getenv('OPENAI_API_KEY_FUTUREPATH_ML')
 openai.api_key = os.environ["OPENAI_API_KEY"]
-
 
 # Initialize OpenAI client
 client = OpenAI(api_key=openai.api_key)
