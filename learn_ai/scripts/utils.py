@@ -29,7 +29,7 @@ def chat_completion_request(messages,
                             functions=None,
                             function_call=None):
     if model is None:
-        model = 'gpt-3.5-turbo-0613'
+        model = 'gpt-3.5-turbo-0125'
     
     try:
         completion = client.chat.completions.create(
@@ -46,3 +46,38 @@ def chat_completion_request(messages,
     except Exception as e:
         logging.error(f"Exception: {e}")
         return str(e)
+
+
+@retry(wait=wait_random_exponential(min=1, max=40), stop=stop_after_attempt(5))
+def chat_completion_request_tokens(messages,                            
+                            temperature=0,
+                            seed=123,
+                            model=None,
+                            top_p=1,
+                            max_tokens=None,
+                            functions=None,
+                            function_call=None):
+    if model is None:
+        model = 'gpt-3.5-turbo-0125'
+
+    try:
+        completion = client.chat.completions.create(
+            model=model,
+            messages=messages,
+            temperature=temperature,
+            seed=seed,
+            top_p=top_p,
+            max_tokens=max_tokens,
+            functions=functions,
+            function_call=function_call
+        )
+
+        # Extract token usage from the completion response
+        total_tokens = completion.usage.total_tokens
+        input_tokens = completion.usage.prompt_tokens
+        output_tokens = completion.usage.completion_tokens
+        return completion, (total_tokens, input_tokens, output_tokens)
+    except Exception as e:
+        logging.exception("Unable to generate ChatCompletion response")
+        logging.error(f"Exception: {e}")
+        return None, (0, 0, 0)
