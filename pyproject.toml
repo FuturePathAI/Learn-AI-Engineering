@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "Learn-AI-Engineering"
+name = "learn_ai"
 version = "0.0.1"
 description = "FuturePath AI's training course on Generative AI"
 authors = ["Maruti Agarwal <maruti@futurepath.ai>"]
@@ -29,8 +29,6 @@ chromadb = "^0.4.22"
 langchain-openai = "^0.0.3"
 outlines = "^0.0.24"
 xmltodict = "^0.13.0"
-
-[tool.poetry.dependencies.en_core_web_sm]
 
 [tool.poetry.dev-dependencies]
 

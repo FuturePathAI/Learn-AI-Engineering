@@ -1,7 +1,9 @@
+import os
 import warnings
 warnings.filterwarnings('ignore')
 
 import logging
+import openai
 from openai import OpenAI
 from tenacity import retry, wait_random_exponential, stop_after_attempt
 
