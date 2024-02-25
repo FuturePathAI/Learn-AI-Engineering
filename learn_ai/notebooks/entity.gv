@@ -1,0 +1,20 @@
+// Entity Graph
+digraph {
+	node [shape=plaintext]
+	1 [label=<<table border='0' cellborder='1' cellspacing='0'><tr><td colspan='2'><b>User Profile Service</b></td></tr><tr><td>category</td><td>microservice</td></tr><tr><td>function</td><td>manage user profiles</td></tr><tr><td>use-case</td><td>large-scale web application</td></tr></table>>]
+	2 [label=<<table border='0' cellborder='1' cellspacing='0'><tr><td colspan='2'><b>Scalability</b></td></tr><tr><td>scaling_type</td><td>horizontal scaling</td></tr><tr><td>use-case</td><td>handle spikes in traffic</td></tr></table>>]
+	3 [label=<<table border='0' cellborder='1' cellspacing='0'><tr><td colspan='2'><b>Availability</b></td></tr><tr><td>value</td><td>99.99% uptime</td></tr></table>>]
+	4 [label=<<table border='0' cellborder='1' cellspacing='0'><tr><td colspan='2'><b>Auto-Scaling</b></td></tr><tr><td>type</td><td>horizontal scaling</td></tr><tr><td>based_on</td><td>CPU and memory usage metrics</td></tr><tr><td>action_when_thresholds_are_exceeded</td><td>new instances are automatically spawned</td></tr><tr><td>coverage</td><td>across multiple servers or cloud infrastructure</td></tr></table>>]
+	5 [label=<<table border='0' cellborder='1' cellspacing='0'><tr><td colspan='2'><b>Sharding</b></td></tr><tr><td>function</td><td>distributes the load and enables the database to grow horizontally</td></tr></table>>]
+	6 [label=<<table border='0' cellborder='1' cellspacing='0'><tr><td colspan='2'><b>Create Profile</b></td></tr><tr><td>function</td><td>creating a new user profile</td></tr><tr><td>details</td><td>name, email, and preferences</td></tr></table>>]
+	7 [label=<<table border='0' cellborder='1' cellspacing='0'><tr><td colspan='2'><b>Deployment</b></td></tr><tr><td>method</td><td>deployed on a Kubernetes cluster</td></tr><tr><td>benefits</td><td>leveraging its auto-scaling capabilities for service instances</td></tr></table>>]
+	2 -> 1
+	3 -> 1
+	4 -> 1
+	4 -> 2
+	5 -> 1
+	5 -> 2
+	6 -> 1
+	7 -> 1
+	7 -> 4
+}

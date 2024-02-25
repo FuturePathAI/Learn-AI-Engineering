@@ -29,8 +29,13 @@ chromadb = "^0.4.22"
 langchain-openai = "^0.0.3"
 outlines = "^0.0.24"
 xmltodict = "^0.13.0"
+instructor = {version = "^0.6.1", python = ">=3.10,<3.11"}
 
 [tool.poetry.dev-dependencies]
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.2.2"
+graphviz = "^0.20.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
