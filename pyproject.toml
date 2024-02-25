@@ -11,6 +11,7 @@ jupyter = "^1.0.0"
 openai = "^1.10.0"
 python-dotenv = "^1.0.1"
 tqdm = "^4.66.1"
+ragas = "^0.1.2"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.1.15"
@@ -18,3 +19,4 @@ ruff = "^0.1.15"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+ruff = ">=0.2.2"
