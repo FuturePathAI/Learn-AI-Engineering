@@ -34,8 +34,13 @@ tenacity = "^8.2.3"
 python-dotenv = "^1.0.1"
 voyager = "^2.0.2"
 html5lib = "^1.1"
+instructor = {version = "^0.6.1", python = ">=3.10,<3.11"}
 
 [tool.poetry.dev-dependencies]
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.2.2"
+graphviz = "^0.20.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
