@@ -32,6 +32,8 @@ xmltodict = "^0.13.0"
 termcolor = "^2.4.0"
 tenacity = "^8.2.3"
 python-dotenv = "^1.0.1"
+voyager = "^2.0.2"
+html5lib = "^1.1"
 
 [tool.poetry.dev-dependencies]
 
