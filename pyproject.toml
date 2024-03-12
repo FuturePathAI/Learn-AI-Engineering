@@ -37,7 +37,6 @@ tenacity = "^8.2.3"
 [tool.poetry.dev-dependencies]
 
 [tool.poetry.group.dev.dependencies]
->>>>>>> json_mode
 ruff = "^0.2.2"
 graphviz = "^0.20.1"
 

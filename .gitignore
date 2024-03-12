@@ -1,5 +1,6 @@
 .python-version*
 vectordb/
+poetry.lock
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
