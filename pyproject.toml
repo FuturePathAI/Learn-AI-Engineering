@@ -2,7 +2,7 @@
 name = "learn_ai"
 version = "0.0.1"
 description = "FuturePath AI's training course on Generative AI"
-authors = ["Maruti Agarwal <maruti@futurepath.ai>"]
+authors = ["Maruti Agarwal <maruti@futurepath.ai>", "Nirant Kasliwal <nirant.bits@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = ">=3.9, <3.12"
@@ -33,6 +33,7 @@ python-dotenv = "^1.0.1"
 instructor = {version = "^0.6.1", python = ">=3.10,<3.11"}
 termcolor = "^2.4.0"
 tenacity = "^8.2.3"
+ydata-profiling = "^4.7.0"
 
 [tool.poetry.dev-dependencies]
 
