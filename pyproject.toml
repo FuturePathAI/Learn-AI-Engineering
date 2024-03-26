@@ -33,6 +33,7 @@ python-dotenv = "^1.0.1"
 instructor = {version = "^0.6.1", python = ">=3.10,<3.11"}
 termcolor = "^2.4.0"
 tenacity = "^8.2.3"
+voyager = "^2.0.6"
 
 [tool.poetry.dev-dependencies]
 
