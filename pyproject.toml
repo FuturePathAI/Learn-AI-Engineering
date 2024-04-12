@@ -36,6 +36,7 @@ tenacity = "^8.2.3"
 voyager = "^2.0.6"
 pydantic = "^2.6.4"
 qdrant-client = "^1.8.2"
+numexpr = "^2.10.0"
 
 [tool.poetry.dev-dependencies]
 
