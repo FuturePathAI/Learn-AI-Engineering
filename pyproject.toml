@@ -30,7 +30,7 @@ langchain-openai = "^0.0.3"
 outlines = "^0.0.24"
 xmltodict = "^0.13.0"
 python-dotenv = "^1.0.1"
-instructor = {version = "^0.6.1", python = ">=3.10,<3.11"}
+instructor = {version = "^0.6.1", python = ">=3.10,<=3.11"}
 termcolor = "^2.4.0"
 tenacity = "^8.2.3"
 voyager = "^2.0.6"
