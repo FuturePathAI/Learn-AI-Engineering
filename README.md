@@ -22,10 +22,6 @@ poetry install --no-cache
 ```
 3. To Run the Notebooks select the kernal `learn_ai` in jupyter-notebook. 
 
-### Makefile Setup 
-
-You can use `make setup` command as well to fetch and install pyenv , poetry along with virtualenv creation.This creates a virtual environment called `learn_ai` with all the dependencies in the project.
-
 ### Running with Colab 
 
 Add tocolab to the domain open a Github notebook directly in Colab i.e. replacing https://github.com with https://githubtocolab.com. 
