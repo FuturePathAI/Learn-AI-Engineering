@@ -2,7 +2,7 @@
 Code, notebooks, and other material for FuturePath AI's training course on Generative AI
 
 ## Setup Instructions
-
+You can follow along with [this](https://www.loom.com/share/6adad8817d9b4f8281084e32e335614a?sid=ae2a71bc-2a84-4f8a-83b3-260a9881a506) video to setup the dependencies on your local. 
 ### Manual Setup 
 1. Virtual Environment Setup<br>
     - Setup a virtual environment on your local machine using `pyenv` or `miniconda`.Using miniconda or pyenv ensures that you can switch between multiple python version seamlessly.<br>
@@ -12,7 +12,7 @@ Code, notebooks, and other material for FuturePath AI's training course on Gener
     - Install specific Python version and create a virtualenv using below commands
 ```
 pyenv install 3.11.0
-pyenv virtualenv  3.11 learn_ai
+pyenv virtualenv  3.11.0 learn_ai
 pyenv shell learn_ai
 ```
 2. Install Dependencies <br>
@@ -25,6 +25,7 @@ poetry install --no-cache
 ### Running with Colab 
 
 Add tocolab to the domain open a Github notebook directly in Colab i.e. replacing https://github.com with https://githubtocolab.com. 
+
 
 Manually install all dependencies by adding them to “pip install” at the start of the notebook — for instance:
 
