@@ -11,7 +11,7 @@ Code, notebooks, and other material for FuturePath AI's training course on Gener
     - Follow the instructions [here](https://github.com/pyenv/pyenv?tab=readme-ov-file#installation) to install pyenv. 
     - Install specific Python version and create a virtualenv using below commands
 ```
-pyenv install 3.11
+pyenv install 3.11.0
 pyenv virtualenv  3.11 learn_ai
 pyenv shell learn_ai
 ```
