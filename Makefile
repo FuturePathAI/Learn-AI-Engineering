@@ -28,7 +28,7 @@ install_poetry:
 # Target to setup virtual environment and install dependencies
 setup_env:
 	@if [ -z "$$(pyenv versions | grep learn_ai)" ]; then \
-		pyenv virtualenv 3.11.0 learn_ai_eng; \
+		pyenv virtualenv 3.11.0 learn_ai; \
 	fi
 	@pyenv local learn_ai
 	@pip install poetry==1.6.1
