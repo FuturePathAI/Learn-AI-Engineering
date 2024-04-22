@@ -1,6 +1,24 @@
 # Learn-AI-Engineering
 Code, notebooks, and other material for FuturePath AI's training course on Generative AI
 
+## Set up
+- (Pre-requisite) Install Pyenv & Poetry
+- Follow commands below
+
+```
+git clone https://github.com/FuturePathAI/Learn-AI-Engineering.git
+cd Learn-AI-Engineering
+pyenv install 3.10.10 
+pyenv local 3.10.10
+poetry shell
+poetry install
+```
+
+- Start jupyter notebook, when the instllation is complete. 
+
+```
+jupyter-lab
+```
 
 ## Assignments 
 
