@@ -17,7 +17,7 @@ numpy = "^1.23.5"
 jupyterlab = "^4.0.5"
 openai = "*"
 tqdm = "^4.66.1"
-pandas = "^2.1.2"
+pandas = "2.2.1"
 langchain = "*"
 unstructured = {extras = ["pdf"], version = "^0.12.2"}
 tiktoken = "^0.5.1"
