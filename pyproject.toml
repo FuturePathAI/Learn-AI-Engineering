@@ -24,7 +24,6 @@ xmltodict = "^0.13.0"
 python-dotenv = "^1.0.1"
 instructor = {version = "^0.6.1", python = ">=3.10,<=3.11"}
 tenacity = "^8.2.3"
-voyager = "^2.0.6"
 pydantic = "^2.6.4"
 qdrant-client = "^1.8.2"
 langchain = "^0.1.16"
