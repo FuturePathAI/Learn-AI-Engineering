@@ -1,13 +1,19 @@
 import os
 import openai
-from llama_index import ServiceContext, SimpleDirectoryReader, VectorStoreIndex, OpenAIEmbedding
+from llama_index import (
+    ServiceContext,
+    SimpleDirectoryReader,
+    VectorStoreIndex,
+    OpenAIEmbedding,
+)
 from llama_index.llms import OpenAI
 from llama_index.postprocessor import LongContextReorder
 from llama_index.response.notebook_utils import display_response
 
 # Set the OpenAI API key
-os.environ["OPENAI_API_KEY"] = os.getenv('OPENAI_API_KEY_FUTUREPATH_ML')
+os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
 openai.api_key = os.environ["OPENAI_API_KEY"]
+
 
 class LlamaIndexQueryEngine:
     def __init__(self, data_dir, model_name="gpt-3.5-turbo-instruct", temperature=0.1):
@@ -16,17 +22,21 @@ class LlamaIndexQueryEngine:
         self.temperature = temperature
 
         self.llm = OpenAI(model=self.model_name, temperature=self.temperature)
-        self.ctx = ServiceContext.from_defaults(llm=self.llm, embed_model=OpenAIEmbedding())
+        self.ctx = ServiceContext.from_defaults(
+            llm=self.llm, embed_model=OpenAIEmbedding()
+        )
 
         self.documents = self._load_documents()
         self.index = self._create_index()
 
         # Node Post-processor
         self.reorder = LongContextReorder()
-        self.reorder_engine = self.index.as_query_engine(node_postprocessors=[self.reorder], similarity_top_k=5)
-        
+        self.reorder_engine = self.index.as_query_engine(
+            node_postprocessors=[self.reorder], similarity_top_k=5
+        )
+
         self.base_engine = self.index.as_query_engine(similarity_top_k=5)
-        
+
     def _load_documents(self):
         return SimpleDirectoryReader(self.data_dir).load_data()
 
@@ -42,6 +52,7 @@ class LlamaIndexQueryEngine:
         response = self.reorder_engine.query(query)
         display_response(response)
         return response
+
 
 # if __name__ == "__main__":
 #     data_dir = "./data/paul_graham/"
