@@ -10,7 +10,7 @@ from langchain_openai import OpenAI
 import os
 
 # Set the OpenAI API key
-os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY_FUTUREPATH_ML")
+os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
 openai.api_key = os.environ["OPENAI_API_KEY"]
 
 
