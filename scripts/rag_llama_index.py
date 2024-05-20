@@ -3,7 +3,6 @@ import chromadb
 
 from llama_index.llms import OpenAI
 from llama_index.vector_stores import ChromaVectorStore
-from llama_index.node_parser import SimpleNodeParser
 from llama_index.text_splitter import SentenceSplitter
 from llama_index import (
     SimpleDirectoryReader,
@@ -11,8 +10,6 @@ from llama_index import (
     StorageContext,
     ServiceContext,
     OpenAIEmbedding,
-    PromptHelper,
-    load_index_from_storage,
     get_response_synthesizer,
 )
 from llama_index.retrievers import VectorIndexRetriever

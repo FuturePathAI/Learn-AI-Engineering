@@ -1,7 +1,5 @@
 import os
 import openai
-import logging
-from threading import Lock
 
 from langchain.document_loaders import DirectoryLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
