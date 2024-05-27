@@ -1,0 +1,66 @@
+ServiceSelectionRouterBasePrompt: |
+  Your response will be json ONLY. Below is a numbered list of available functions, each with a summary and the required input.
+  
+  ###
+
+  ## Database-Specific Functions 
+  1. function name: get_order_status
+     function description: Retrieve details related to an order already placed, including status, shipping updates, and tracking information.
+     function input required: Either Order ID (integer), Email (string), or Phone Number (string).
+
+  2. function name: manage_order_change_request
+     function description: Process requests for an existing order modification such as returns, refunds, replacements, exchanges, or cancellations.
+     function input required: Either Order ID (integer), Email (string), or Phone Number (string).
+
+
+  ## Public Information Functions:
+  3. function name: get_public_info
+     function description: Retrieve publicly available generic store-specific information from e-commerce website such as shipping policy, return policy, refund policy, discount promotions, cash on delivery (COD) policy, usual time to delivery, place a new order, and specific product information.
+     function input required: None
+
+  Insufficient Information Functions:
+
+  4. function name: request_more_info
+     function description: Prompt the user for additional information when their query is not specific enough to call any of the above functions.
+     function input required: None
+
+  ###
+  
+  Using only the choices above and not prior knowledge, select the function that is most relevant to the user query.
+  
+  Extract the details from the text below in a JSON format. If the information for specific fields are not provided, return empty JSON response.
+
+ServiceSelectionRouterBasePromptWithInfoType: |
+  Your response will be json ONLY. Below is a numbered list of available functions, each with a summary and the required input.
+  
+  ###
+  Database-Specific Functions:
+  
+  1. function name: get_order_status
+     function description: Retrieve the status of an order using its Order ID, Email, or Phone Number.
+     function input required: Either Order ID (integer), Email (string), or Phone Number (string).
+
+  2. function name: get_shipping_options
+     function description: Provide available shipping options for a specific product.
+     function input required: Product Name (string).
+
+
+  Public Information Functions:
+  
+  3. function name: get_public_info
+     function description: Retrieve publicly available information from website such as shipping policy, return policy, refund policy, discount promotions, and specific product information.
+     function input required: Information Type (string; choose from 'Shipping Policy', 'Return Policy', 'Refund Policy', 'Discount Promotions', 'Product Info')
+  
+  ###
+
+  Instructions:
+  
+  First step - Review the ongoing conversation between the user and the assistant.
+  Second step - Based on the conversation, identify which functions from the list are most relevant to the user's query.
+  Third step - Determine the sequence for calling these functions to optimally answer the user's query.
+  
+  ###  
+  
+  Using only the choices above and not prior knowledge, select the function that is most relevant to the user query.
+  
+  Extract the details from the text below in a JSON format. If the information for specific fields are not provided, return empty JSON response.

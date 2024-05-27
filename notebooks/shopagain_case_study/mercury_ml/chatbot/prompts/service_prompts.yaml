@@ -1,0 +1,112 @@
+OrderServiceRouterBasePrompt: |
+  Your response will be json. Some choices are given below. It is provided in a numbered list. 1-3, 
+  where each item corresponds to a function with a summary about its usage.
+  ###
+  1. function name: get_order_status
+     function description: Get the status of an order given its Order ID, Email, or Phone Number
+     function input required: Either order id (an integer), email (a string), or phone number (a string)
+
+  2. function name: get_last_order_date
+     function description: Get the date when the last order was placed by a customer using Order ID, Email, or Phone Number
+     function input required: Either order id (an integer), email (a string), or phone number (a string)
+
+  3. function name: get_recent_order_products
+     function description: Confirm the products and quantities in the most recent order of a customer using Order ID, Email, or Phone Number
+     function input required: Either order id (an integer), email (a string), or phone number (a string)
+     
+  ###
+
+  Using only the choices above and not prior knowledge, select the function that is most relevant to the user query. Extract the details from the text below in a JSON format. If the information for specific fields are not provided, return empty JSON response.
+
+
+
+ProductServiceRouterBasePrompt: |
+  Your response will be json. Some choices are given below. It is provided in a numbered list. 1-2, 
+  where each item corresponds to a function with a summary about its usage.
+  ###
+  1. function name: get_vendor_info
+     function description: Provide information about a specific product
+     function input required: Product id (a string)
+     
+  2. function name: get_product_variants
+     function description: Provide information about other variants available for a specific product
+     function input required: Product id (a string)
+     
+  ###
+
+  Using only the choices above and not prior knowledge, select the function that is most relevant to the user query. Extract the details from the text below in a JSON format. If the information for specific fields are not provided, return empty JSON response.
+
+
+ShippingServiceRouterBasePrompt: |
+  Your response will be json. Some choices are given below. It is provided in a numbered list. 1-2,
+  where each item corresponds to a function with a summary about its usage.
+  ###
+  1. function name: get_shipping_options
+     function description: Provide shipping options available for a specific product
+     function input required: Product id (a string)
+     
+  2. function name: get_shipping_policy
+     function description: Retrieve the shipping policy of the store
+     function input required: None
+
+  3. function name: get_shipping_status
+     function description: Get the shipping status of an order given its Order ID, Email, or Phone Number
+     function input required: Either order id (an integer), email (a string), or phone number (a string)
+     
+  ###
+
+  Using only the choices above and not prior knowledge, select the function that is most relevant to the user query. Extract the details from the text below in a JSON format. If the information for specific fields are not provided, return empty JSON response.
+
+
+ReturnRefundServiceRouterBasePrompt: |
+  Your response will be json. Some choices are given below. It is provided in a numbered list. 1-6,
+  where each item corresponds to a function with a summary about its usage. 
+  ###
+  1. function name: get_refund_status
+     function description: Retrieve the refund status for a specific order
+     function input required: Order ID, email, or phone number (at least one identifier is required)
+     
+  2. function name: get_return_status
+     function description: Retrieve the return status for a specific order
+     function input required: Order ID, email, or phone number (at least one identifier is required)
+
+  3. function name: get_return_policy
+     function description: Obtain the return policy of the store
+     function input required: None
+
+  4. function name: get_refund_policy
+     function description: Obtain the refund policy of the store
+     function input required: None
+     
+  5. function name: replace_product
+     function description: Replace request for an ordered product
+     function input required: Order ID, email, or phone number (at least one identifier is required)
+
+  6. function name: return_product
+     function description: Return request for an ordered product
+     function input required: Order ID, email, or phone number (at least one identifier is required)
+     
+  ###
+
+  Using only the choices above and not prior knowledge, select the function that is most relevant to the user query. Extract the details from the text below in a JSON format. If the information for specific fields are not provided, return empty JSON response.
+
+
+PricingDiscountServiceRouterBasePrompt: |
+  Your response will be json. Some choices are given below. It is provided in a numbered list. 1-3,
+  where each item corresponds to a function with a summary about its usage. 
+  -----------------------  
+  1. function name: get_discount_coupon_info
+     function description: Retrieve information regarding available discount coupons
+     function input required: Coupon code (optional)
+     
+  2. function name: get_promotion_info
+     function description: Obtain information regarding ongoing promotions
+     function input required: None
+
+  3. function name: get_gift_info
+     function description: Acquire information regarding available gift options
+     function input required: None
+     
+    ###
+
+  Using only the choices above and not prior knowledge, select the function that is most relevant to the user query. Extract the details from the text below in a JSON format. If the information for specific fields are not provided, return empty JSON response.
