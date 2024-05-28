@@ -54,18 +54,6 @@ def init_config():
     cfg.marvin.LLM_MAX_TOKENS = 1500
     cfg.marvin.PRODUCT_TYPES: dict = {
         "6b0173e7-bd13-4046-b8fa-d5d39240950e": "personalized jewelry",  # inaya
-        "2c7aaa94-4cd2-4a55-a220-6dd150bcc910": "personalized jewelry",  # inaya shopify,
-        "8f6a44b2-4fa4-4ae2-86f7-9ef90a97021d": "sticker store",  # stickerlane
     }
 
-    # store specific information
-    cfg.store_info = edict()
-    cfg.store_info.EMAIL: dict = {
-        "6b0173e7-bd13-4046-b8fa-d5d39240950e": "support@inayaaccessories.com",  # inaya
-        "2c7aaa94-4cd2-4a55-a220-6dd150bcc910": "support@inayaaccessories.com",  # inaya shopify,
-    }
-    cfg.store_info.PHONE: dict = {
-        "6b0173e7-bd13-4046-b8fa-d5d39240950e": "WhatsApp +918355940180 (calling not available)",  # inaya
-        "2c7aaa94-4cd2-4a55-a220-6dd150bcc910": "WhatsApp +918355940180 (calling not available)",  # inaya shopify,
-    }
     return cfg
