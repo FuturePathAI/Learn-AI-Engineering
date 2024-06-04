@@ -5,7 +5,9 @@ import warnings
 import openai
 from openai import OpenAI
 from tenacity import retry, stop_after_attempt, wait_random_exponential
+from dotenv import load_dotenv
 
+load_dotenv()
 # Configure logging
 logging.basicConfig(format="%(levelname)s:%(message)s", level=logging.INFO)
 
