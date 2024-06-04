@@ -1,0 +1,70 @@
+openapi: 3.0.0
+info:
+  title: RAG App API
+  version: 1.0.0
+  description: API for Retrieval-Augmented Generation (RAG) App
+
+servers:
+  - url: https://api.example.com/v1
+
+paths:
+  /chat:
+    post:
+      summary: Process chat messages and generate answers
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChatRequest'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:    
+              schema:
+                $ref: '#/components/schemas/ChatResponse'
+        '401':
+          description: Unauthorized
+        '500':
+          description: Internal server error
+      security:
+        - bearerAuth: []
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      
+  schemas:
+    ChatRequest:
+      type: object
+      properties:
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/ChatMessage'
+      required:
+        - messages
+
+    ChatMessage:
+      type: object
+      properties:
+        content:
+          type: string
+        role:
+          type: string
+          enum: [user, assistant, system]
+      required:
+        - content
+        - role
+
+    ChatResponse:
+      type: object
+      properties:
+        answer:
+          type: string
+      required:
+        - answer
